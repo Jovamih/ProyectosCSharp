@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>MenuNombres</AssemblyName>
+    <Authors>Johan Valerio Mitma Huaccha</Authors>
+    <Company>Manquina de Johan</Company>
+    <Product>Software</Product>
+    <Description>Se proporciona una software de listado de nombres en modo prueba</Description>
+    <Copyright>2020</Copyright>
+    <PackageLicenseExpression>La licencia de este sofware se concede a fines recreativos no comerciales</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Jovamih/ProyectosCSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Jovamih/ProyectosCSharp</RepositoryUrl>
+    <PackageTags>Test</PackageTags>
+    <PackageReleaseNotes>Es una version de prueba sin animos de lucro</PackageReleaseNotes>
+    <NeutralLanguage>es-PE</NeutralLanguage>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+</Project>
