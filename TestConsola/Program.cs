@@ -7,7 +7,8 @@ namespace TestConsola
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello World!");
-            EmulateLogin();
+            //EmulateLogin();
+            TestClases();
         }
         private static void DeclaracionOfVariable()
         {
@@ -62,6 +63,15 @@ namespace TestConsola
             {
                 Console.WriteLine("Acceso denegado, contraseña incorrecta");
             }
+        }
+        private static void TestClases()
+        {
+            Persona person01 = new Persona("johab valerio", "98786763");
+            person01.Trabajar();
+            person01.Comer();
+            var personA = new Persona("en el nombre de la rosa", "codege");
+            personA.Trabajar();
+            personA.Comer();
         }
     }
 }
