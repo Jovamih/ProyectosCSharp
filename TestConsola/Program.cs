@@ -73,5 +73,9 @@ namespace TestConsola
             personA.Trabajar();
             personA.Comer();
         }
+        private static void TestInterfaces()
+        {
+            //IVehiculo vehiculo= 
+        }
     }
 }
