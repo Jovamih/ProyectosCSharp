@@ -30,6 +30,7 @@ namespace FileConfigurator
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FramePrincipal));
             this.label1 = new System.Windows.Forms.Label();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace FileConfigurator
             this.txtSetNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.PanelPrincipal = new System.Windows.Forms.Panel();
+            this.lblAutor = new System.Windows.Forms.Label();
             this.lblPathFile = new System.Windows.Forms.Label();
             this.btnAplicar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -105,7 +107,7 @@ namespace FileConfigurator
             // 
             // pictureIcon
             // 
-            this.pictureIcon.Location = new System.Drawing.Point(35, 12);
+            this.pictureIcon.Location = new System.Drawing.Point(35, 24);
             this.pictureIcon.Name = "pictureIcon";
             this.pictureIcon.Size = new System.Drawing.Size(44, 39);
             this.pictureIcon.TabIndex = 5;
@@ -126,10 +128,10 @@ namespace FileConfigurator
             this.label5.Size = new System.Drawing.Size(66, 15);
             this.label5.TabIndex = 14;
             this.label5.Text = "Ubicacion :";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // PanelPrincipal
             // 
+            this.PanelPrincipal.Controls.Add(this.lblAutor);
             this.PanelPrincipal.Controls.Add(this.lblPathFile);
             this.PanelPrincipal.Controls.Add(this.btnAplicar);
             this.PanelPrincipal.Controls.Add(this.label6);
@@ -158,6 +160,18 @@ namespace FileConfigurator
             this.PanelPrincipal.Size = new System.Drawing.Size(407, 294);
             this.PanelPrincipal.TabIndex = 0;
             this.PanelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPrincipal_Paint);
+            // 
+            // lblAutor
+            // 
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAutor.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblAutor.Location = new System.Drawing.Point(35, 264);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(53, 13);
+            this.lblAutor.TabIndex = 29;
+            this.lblAutor.Text = "Acerca de";
+            this.lblAutor.Click += new System.EventHandler(this.lblAutor_Click);
             // 
             // lblPathFile
             // 
@@ -314,10 +328,12 @@ namespace FileConfigurator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 294);
             this.Controls.Add(this.PanelPrincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FramePrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "File Configurator";
+            this.Text = "File Time Changer";
             this.Load += new System.EventHandler(this.FramePrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
             this.PanelPrincipal.ResumeLayout(false);
@@ -351,5 +367,6 @@ namespace FileConfigurator
         private CheckBox checkEditModification;
         private CheckBox checkEditCreation;
         private Label lblPathFile;
+        private Label lblAutor;
     }
 }

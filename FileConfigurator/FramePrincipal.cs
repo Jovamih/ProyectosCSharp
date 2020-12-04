@@ -13,6 +13,7 @@ namespace FileConfigurator
     {
         
         private string pathFile = string.Empty;
+        ToolTip tipPath = new ToolTip();
         public FramePrincipal()
         {
             InitializeComponent();
@@ -52,8 +53,18 @@ namespace FileConfigurator
             // MessageBox.Show("La extension es: " + ext);
             //le asigno un nombre
             txtSetNombre.Text = Path.GetFileName(path);
-            lblPathFile.Text = path;
-            //obtenemos el ultimo acceso del fichero
+            if (path.Length > 40)
+            {
+                lblPathFile.Text = path.Substring(0, 40) + "...";
+            }
+            else
+            {
+                lblPathFile.Text = path;
+            }
+            tipPath.SetToolTip(lblPathFile, path);
+            //le asigna,os el icono
+            AsignIcon();
+                //obtenemos el ultimo acceso del fichero
             DateTime lastAcces = File.GetLastAccessTime(path);
             //la creacion del fichero
             DateTime creationTime = File.GetCreationTime(path);
@@ -73,10 +84,9 @@ namespace FileConfigurator
 
 
         }
-
-        private void label5_Click(object sender, EventArgs e)
+        private void AsignIcon()
         {
-
+            pictureIcon.Image = Icon.ExtractAssociatedIcon(this.pathFile).ToBitmap();
         }
 
         private void PanelPrincipal_Paint(object sender, PaintEventArgs e)
@@ -186,6 +196,11 @@ namespace FileConfigurator
                 btnAplicar_Click(sender,e);
             }
             Application.Exit();
+        }
+
+        private void lblAutor_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Desarrollado por Johan Mitma\n IG: @johan_mitma12", "Autor"); 
         }
     }
 }

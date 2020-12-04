@@ -7,6 +7,8 @@ namespace FileConfigurator
     {
         /// <summary>
         ///  The main entry point for the application.
+        ///  Desarrollado por Johan Valerio Mitma Huaccha
+        ///  UNMSM 2020
         /// </summary>
         [STAThread]
         static void Main()
