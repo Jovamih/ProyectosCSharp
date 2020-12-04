@@ -196,6 +196,7 @@ namespace FileConfigurator
             this.btnCancelar.TabIndex = 25;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -205,6 +206,7 @@ namespace FileConfigurator
             this.btnAceptar.TabIndex = 24;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // checkEditAcceso
             // 
@@ -274,7 +276,7 @@ namespace FileConfigurator
             // 
             // dateAcceso
             // 
-            this.dateAcceso.CustomFormat = "dd\'/\'mm\'/\'yyyy";
+            this.dateAcceso.CustomFormat = "dd\'/\'MM\'/\'yyyy";
             this.dateAcceso.Enabled = false;
             this.dateAcceso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateAcceso.Location = new System.Drawing.Point(169, 198);
@@ -285,7 +287,7 @@ namespace FileConfigurator
             // 
             // dateModification
             // 
-            this.dateModification.CustomFormat = "dd\'/\'mm\'/\'yyyy";
+            this.dateModification.CustomFormat = "dd\'/\'MM\'/\'yyyy";
             this.dateModification.Enabled = false;
             this.dateModification.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateModification.Location = new System.Drawing.Point(169, 156);
@@ -296,7 +298,7 @@ namespace FileConfigurator
             // 
             // dateCreation
             // 
-            this.dateCreation.CustomFormat = "MM\'/\'dd\'/\'yyyy";
+            this.dateCreation.CustomFormat = "dd\'/\'MM\'/\'yyyy";
             this.dateCreation.Enabled = false;
             this.dateCreation.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateCreation.ImeMode = System.Windows.Forms.ImeMode.NoControl;

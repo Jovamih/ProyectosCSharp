@@ -11,7 +11,8 @@ namespace FileConfigurator
 {
     public partial class FramePrincipal : Form
     {
-        private bool ArchivoCargado = false;
+        
+        private string pathFile = string.Empty;
         public FramePrincipal()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace FileConfigurator
                 if(openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     pathFile = openFileDialog.FileName;
+                    this.pathFile = pathFile;
                 }
             }
             return pathFile;
@@ -60,8 +62,14 @@ namespace FileConfigurator
             //El icono del fichero
             //ahora reconocemos los patrones de hora y fecha
             //los patrones de Tiempo de acceso
-            dateAcceso.Value = lastAcces.Date;
-            timeAcceso.Value = Convert.ToDateTime(lastAcces.TimeOfDay.ToString());
+            this.dateAcceso.Value = lastAcces.Date;
+            this.timeAcceso.Value = Convert.ToDateTime(lastAcces.TimeOfDay.ToString());
+            //los patrones para el tiempo de creacion
+            this.dateCreation.Value = creationTime.Date;
+            this.timeCreation.Value = Convert.ToDateTime(creationTime.TimeOfDay.ToString());
+            //los patrones para el tiempo de modificacion
+            this.dateModification.Value = lastModified.Date;
+            this.timeModification.Value = Convert.ToDateTime(lastModified.TimeOfDay.ToString());
 
 
         }
@@ -132,11 +140,18 @@ namespace FileConfigurator
             if (diagResult == DialogResult.Yes)
             {
                 //ejecutar las operaciones
-
+                ApplyChanges();
                 //desabilitamos el boton Aplicar nuevamente
                 btnAplicar.Enabled = false;
             }
                 //caso contrario ya sea por opcion NO o X(EXIT)  
+        }
+        private void ApplyChanges()
+        {
+            File.SetCreationTime(this.pathFile, dateCreation.Value.Date.Add(timeCreation.Value.TimeOfDay));
+            File.SetLastWriteTime(this.pathFile, dateModification.Value.Add(timeModification.Value.TimeOfDay));
+            File.SetLastAccessTime(this.pathFile, dateAcceso.Value.Add(timeAcceso.Value.TimeOfDay));
+        
         }
 
         private void FramePrincipal_Load(object sender, EventArgs e)
@@ -159,6 +174,18 @@ namespace FileConfigurator
             
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (btnAplicar.Enabled)
+            {
+                btnAplicar_Click(sender,e);
+            }
+            Application.Exit();
+        }
     }
 }
