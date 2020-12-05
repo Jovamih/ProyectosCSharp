@@ -4,6 +4,23 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>timeChanger.ico</ApplicationIcon>
+    <Authors>Johan Mitma</Authors>
+    <Company>Home</Company>
+    <PackageId>00001</PackageId>
+    <Description>Software para cambiar las fechas de los archivos</Description>
+    <Copyright>2020</Copyright>
+    <PackageLicenseExpression>Libre distribucion manteniendo los derechos de autor</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Jovamih/ProyectosCSharp</PackageProjectUrl>
+    <PackageIcon>timeChanger.ico</PackageIcon>
+    <RepositoryUrl>https://github.com/Jovamih/ProyectosCSharp/tree/main/FileConfigurator</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Desarrollo software</PackageTags>
+    <PackageReleaseNotes>Version de escritorio</PackageReleaseNotes>
+    <NeutralLanguage>es-PE</NeutralLanguage>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyName>File Time Changer</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +29,13 @@
 
   <ItemGroup>
     <PackageReference Include="Costura.Fody" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\timeChanger.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
